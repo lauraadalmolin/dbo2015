@@ -1,0 +1,1 @@
+java -cp bin oo2.Main

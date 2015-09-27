@@ -1,0 +1,9 @@
+package yahtzee;
+
+public enum Category {
+	
+	ACES, TWOS, THREES, FOURS, FIVES, SIXES, CHANCE, YAHTZEE, FULL_HOUSE, FOUR_OF_A_KIND, THREE_OF_A_KIND,
+	SMALL_STRAIGHT, LARGE_STRAIGHT;
+	
+
+}

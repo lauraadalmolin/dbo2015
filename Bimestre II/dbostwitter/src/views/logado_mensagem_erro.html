@@ -1,0 +1,49 @@
+<html>
+
+	<head> 
+		<title> Logado </title>
+	</head>
+	<font face='Century Gothic'>
+	<body style='background-color:rgb(176,196,222)'> 
+	<h1 align='center'> 
+			<font size='5'>
+				<strong> DBO</strong>stwitter
+			</font>
+		</h1>
+
+		<h1 align='left'> 
+			<font size='3'>
+			Usu&aacute;rio: {{login}}
+			</font>
+			<br>
+			
+		</h1>
+		<h1 align='left'>
+			<font size='3'>
+				Seja bem vindo ao <i><font color='blue'>DBOstwitter</font></i>.
+			</font>
+		</h1>
+		<h1 align='left'> 
+			<font size='3'> Postagens </font>
+		<br>
+			Excedeu o limite de caracteres, por favor informe uma mensagem de no m&aacute;ximo 140 caracteres.
+		<br>	
+		<font size='2'>
+		
+		{{#Usuario.postagens}}
+			<p>
+			{{texto}}
+			</p>
+		{{/Usuario.postagens}}
+		</font>
+		<br>
+		<a href="/new_post">
+		Nova postagem 
+		</a>
+		<br>
+		
+			
+	</font>
+
+	</body>
+</html>

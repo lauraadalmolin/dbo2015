@@ -1,0 +1,33 @@
+OO-MODEL-IMPLEMENTATION: objetos e relacionamentos
+==================================================
+
+* * *
+
+## Implementar objetos e seus relacionamentos
+
+#### Prazo: 2015-07-12 Peso: 0.24 pt
+
+Implementar as classes necessárias para representar um sistema de catálogo de músicas. Neste catálogo devem estar representados as pessoas sejam autores, vocalistas ou músicos, instrumentos que tocam se for o caso, bandas, álbuns com ano e outros detalhes, canções, gravadoras, etc.
+
+O modelo deve ser entregue em códigos com os testes necessários, por exemplo:
+
+    Genero generoFunkRock = new Genero("funk rock");
+    Genero rockAlternativo = new Genero("rock alternativo");
+    Banda b = new Banda();
+    b.setNome("red hot chili peppers");
+    b.addGenero(generoFunkRock);
+    b.addGenero(rockAlternativo);
+    b.setDataFundacao(new Date(13, 2, 1983));
+
+    System.out.println(b.getNome().equals("red hot chili peppers"));
+    System.out.println(b.getGenero(0).equals(generoFunkRock));
+    System.out.println(b.getGenero(1).equals(rockAlternativo));
+    System.out.println(b.getGenero(2) == null);
+    System.out.println(b.getDataFundacao().equals(new Date(13, 2, 1983)));
+
+Obs.: usar as classes já existentes (como `Date` e `List`) para construir o modelo.
+
+### Restrições
+
+* Não podem ser usadas as classes e métodos da API do Java, como os métodos de String, **mas todos os operadores estão liberados, inclusive concatenar _strings_ com +**.
+* Não devem existir métodos estáticos (com exceção do `main` é claro).

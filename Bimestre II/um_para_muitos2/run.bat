@@ -1,0 +1,1 @@
+java -cp bin um_para_muitos2.Main

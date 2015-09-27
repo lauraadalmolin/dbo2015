@@ -1,0 +1,57 @@
+2º Bimestre
+
+----- > 06/05/15 - Bimestre II/oo/src/oo
+
+Relacionamentos
+===============
+
+Como os objetos interagem. Objetsos que se relacionam com outros objetos para resolver um problema maior.
+
+Ideia de estrutura de objetos.
+O que está agregado a quê?
+O que é composto pelo quê?
+O que se relaciona a quê?
+
+
+Senha wi-fi: d42d0ac94b49920b9db773905fa3069c
+
+Tema:
+
+- Implementar a parte "Endereço" da classe Cliente;
+- Implementar "OO-Relationships";
+- Implementar o trabalho para o dia 26/05 - 0.5 pts..
+
+// System.currentTimeMillis() 
+
+-----> 13/05/2015 - DBO -> oo3
+-----> 20/05/2015 - DBO -> oo4
+-----> 27/05/2015 - DBO -> toolkit/oo5
+-----> 03/06/2015 - DBO -> cobaia, web, oo6
+
+http://sparkjava.com/
+
+<dependency>
+    <groupId>com.sparkjava</groupId>
+    <artifactId>spark-core</artifactId>
+    <version>2.2</version>
+</dependency>
+
+
+----> 10/06/2015
+Arquivo: web2
+WEB =
+
+HTTP
+   Hyper Text Transfer Protocol
+   Hiper Texto = Textos conectados
+
+HTML
+   Hyper Text Markup Language
+   Linguagem de Marcação de Híper-Texto
+
+----> 17/06/2015
+Arquivo: web2 
+sparkjava.com
+mustache.github.io
+
+https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
