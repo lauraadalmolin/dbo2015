@@ -1,0 +1,37 @@
+26/08
+
+BAIXAR: Git para Windows
+
+git pull -> renova um repositório
+
+git clone -> clona um repositório
+
+git push -> envia para um repositório
+
+git commit -> deixa pronto para dar push
+
+git add -> adiciona como pertencente ao repositório
+
+cria, modifica ou exclui um arquivo/pasta
+
+git add * --all --> qualquer alteração
+
+// antes deve configurar user.name e user.email
+
+git commit -m "mensagem"
+
+git pull
+
+git push
+
+--------------------------------------------------------
+
+EQUIPE
+
+-> Gerenciar as tarefas
+
+-> Especificação 
+
+Especificação
+
+Ajustar/editar .gitignore

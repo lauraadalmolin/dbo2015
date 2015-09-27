@@ -1,0 +1,11 @@
+		System.out.println(file.length());
+		
+		File newName = new File ("d:/aula.txt");
+		System.out.println(newName.exists());
+		
+		file.renameTo(newName);
+		
+		File dir = new File("d:/musicas");
+		dir.delete();
+		dir.mkdir(); // cria pasta
+	}
