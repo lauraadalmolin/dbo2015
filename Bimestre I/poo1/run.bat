@@ -1,0 +1,1 @@
+java -cp bin poo1.Main

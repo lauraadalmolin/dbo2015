@@ -1,0 +1,1 @@
+java -cp bin intro2.Main

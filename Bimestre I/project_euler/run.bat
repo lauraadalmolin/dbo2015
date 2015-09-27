@@ -1,0 +1,1 @@
+java -cp bin project_euler.Main

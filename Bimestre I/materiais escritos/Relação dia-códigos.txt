@@ -1,0 +1,31 @@
+Relação dia/aula - códigos trabalhados
+
+01/04/15: oo-fashion, poo1.
+
+Prova dia 22/04/15
+-> Objetiva e escrita
+
+Trabalho complexos:
+
+Complexo c1 = new Complexo(4, 5);
+System.out.println(c1); // 4 + 5i
+
+Complexo c2 = new Complexo(4);
+System.out.println(c2); // 4 + 0i ou 4;
+
+Complexo c3 = new Complexo(4.2, 5.2);
+System.out.println(c3); // 4.2 + 1.2i
+
+Complexo c5 = new Complexo(3, 2);
+Complexo c6 = c5.mais(1);
+System.out.println(c6);
+
+6h
+23355
+r + i * r + i
+
+-------------------------------------------------------------
+08/04/2015
+
+Códigos: oo
+Arquivos texto: 08_04_15
