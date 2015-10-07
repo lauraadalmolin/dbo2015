@@ -1,0 +1,42 @@
+h1 {
+	font-size: 14pt;
+	font-family: "Arial", "Verdana";
+	text-align: center;
+}
+
+p{
+	margin-left: 10px;
+}
+
+/*.significa class*/
+.negrito{
+	font-weight:bold;
+}
+
+.atencao{
+	background-color: lime;
+}
+
+h1.vermelho {
+	background-color: cyan;
+	border-width: thick;
+	border-color: blue;
+	border-style: dotted;
+}
+
+label{
+	margin-top: 20px;
+	display: block;
+}
+
+input{
+	border: 1px solid gray;
+}
+
+input:focus{
+	border: 1px solid orange;
+}
+
+p:hover {
+	font-size: 100px;
+}

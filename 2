@@ -1,0 +1,98 @@
+THE LAST ONE: everything together now
+=====================================
+["Agora parece um pedido seu ...""](http://youtu.be/YdVQzJKx1F4)
+
+* * *
+
+## Implementar um BLOG
+
+Nesta atividade se está adotando pontuação progressiva, preste bastante atenção.
+
+### Implementar um conversor de Markdown para HTML 1.0
+
+Markdown é uma formatação usada para especificar elementos de um documento como títulos, parágrafos, listas, etc. A especificação do formato pode ser vista neste endereço <https://daringfireball.net/projects/markdown/>.
+
+O objetivo é implementar uma parte que está a seguir:
+
+- Texto iniciado com `# texto` tornar-se um `<h1>texto</h1>`;
+- Texto iniciado com `## texto` tornar-se um `<h2>texto</h2>`;
+- Texto iniciado com `### texto` tornar-se um `<h3>texto</h3>`;
+- Qualquer texto é transformado em parágrafo, por exemplo, o texto `Um texto de teste...` torna-se `<p>Um texto de teste...</p>`
+- Texto abraçado com `<` e `>`, por exemplo `<google.com>` torna-se uma âncora, por exemplo `<a href="google.com">google.com</a>`;
+- Texto abraçado com `*` fica itálico, por exemplo `*um texto*` torna-se `<em>um texto</em>`.
+- Texto abraçado com `**` fica negrito, por exemplo `**um texto**` torna-se `<strong>um texto</strong>`
+
+
+Para fazer essa conversão será criada uma classe `Markdown` com o método estático `toHTML(String):String`. Os Casos de teste estão a seguir:
+
+Casos de teste:
+
+    // texto plano é um parágrafo por padrão
+    Markdown.toHTML("texto").equals("<p>texto</p>");
+    // espaços antes e depois da string devem ser ignorados
+    Markdown.toHTML("  texto e teste  ").equals("<p>texto e teste</p>");
+    // títulos
+    Markdown.toHTML("# TÍTULO PRINCIPAL").equals("<h1>TÍTULO PRINCIPAL</h1>");
+    // lembrando, espaços antes e depois são ignorados
+    Markdown.toHTML("#     TÍTULO PRINCIPAL    ").equals("<h1>TÍTULO PRINCIPAL</h1>");
+    Markdown.toHTML("## Títulos de segundo nível").equals("<h2>Títulos de segundo nível</h2>");
+    Markdown.toHTML("### Títulos de terceiro nível").equals("<h3>Títulos de terceiro nível</h4>");
+    // quando fica junto é ignorado
+    Markdown.toHTML("#Não é título").equals("<p>#Não é título</p>");
+    // mais de três níveis é ignorado
+    Markdown.toHTML("#### Não é título").equals("<p>#### Não é título</p>");
+    // ---------- ATEH AQUI 0.5
+
+    // os formatos a seguir se aplicam mesmo dentro de títulos e parágrafos
+    Markdown.toHTML("Um texto de *teste* itálico.").equals("<p>Um texto de <em>teste</em> itálico.</p>");
+    // só funciona se dentro do marcador houver um não-espaço
+     Markdown.toHTML("Um texto de * teste* itálico.").equals("<p>Um texto de * teste* itálico.</p>");
+     Markdown.toHTML("Um texto de *teste * itálico.").equals("<p>Um texto de *teste * itálico.</p>");
+     Markdown.toHTML("Um texto de * teste * itálico.").equals("<p>Um texto de * teste * itálico.</p>");
+     // sem espaços internos funciona, mesmo com uma frase
+     Markdown.toHTML("Um texto de *teste em itálico* com várias palavras.").equals("<p>Um texto de <em>teste em itálico</em> com várias palavras.</p>");
+     // meio aberto (ou fechado) é ignorado
+     Markdown.toHTML("Um texto de *teste em itálico com várias palavras.").equals("<p>Um texto de *teste em itálico com várias palavras.</p>");
+
+     // vale tudo para negrito
+     Markdown.toHTML("Um texto de **teste em negrito** com várias palavras.").equals("<p>Um texto de <strong>teste em negrito</strong> com várias palavras.</p>");
+
+     // hyperlinks da mesma maneira só que com < e >
+     Markdown.toHTML("Parágrafo com link para <http://google.com> de teste.").equals("<p>Parágrafo com link para <a href=\"http://google.com\">http://google.com</a> de teste.</p>");
+     Markdown.toHTML("Parágrafo com link para < http://google.com> de teste.").equals("<p>Parágrafo com link para < http://google.com> de teste.</p>");
+     // ATEH AQUI 1.0
+
+
+### Construir um BLOG mínimo com Spark que faça uso de marcação especial 2.3
+
+São duas funcionalidades que serão descritas a seguir.
+
+**Funcionalidade #1:** deve possuir um formulário para permitir a postagem. Apenas dois campos: título e texto. (1.0)
+
+Cada post deve ser persistido com um número gerado que deve sobreviver entre execuções. O arquivo salvo, neste caso, deve ser um `TXT` e não um `CSV`.
+
+Importante: deve validar evitando gravar posts com títulos com menos de 15 caracteres e textos com menos de 100.
+
+A métrica para receber 1.0 ponto é se estiver salvando posts recebe 0.3, e sendo apenas os válidos 0.5, no arquivo com o formato `TXT` contendo título e texto, numerado corretamente entre execuções (ou seja, mesmo que se pare e reinicie o processo) vale 1.0.
+
+**Funcionalidade #2:** deve apresentar na tela principal os posts (todos e na ordem inversa, ou seja, o último persistido deve aparecer primeiro) formatados com conversão Markdown para HTML. (1.3) Ou seja, um post com o texto:
+
+    # Este é o título
+
+    Lorem ipsum dolor sit amet, **consectetur adipiscing elit**. Duis lacinia aliquam eros, eget iaculis enim varius vitae. In ornare eu lacus eu lobortis. 
+
+    In tempus felis a malesuada tincidunt. Fusce egestas ante sed euismod ornare. Suspendisse porttitor ultricies magna eget commodo. Cras mattis luctus porttitor. Ut ornare convallis ligula, eu porttitor tellus sollicitudin eu. Nunc malesuada est et porta volutpat.
+
+Deve tornar-se o HTML:
+
+    <h1>Este é o título</h1>
+
+    <p>Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Duis lacinia aliquam eros, eget iaculis enim varius vitae. In ornare eu lacus eu lobortis.</p>
+
+    <p>In tempus felis a malesuada tincidunt. Fusce egestas ante sed euismod ornare. Suspendisse porttitor ultricies magna eget commodo. Cras mattis luctus porttitor. Ut ornare convallis ligula, eu porttitor tellus sollicitudin eu. Nunc malesuada est et porta volutpat.</p>
+
+A métrica para avaliação é:
+
+- Apresentou os posts (0.7)
+- Apresentou os posts na ordem inversa (1.0)
+- Apresentou usando a conversão Markdown/HTML (1.3)
