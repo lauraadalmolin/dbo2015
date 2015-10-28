@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head> <meta charset="utf-8"> </head>
+<body>
+	<h1>
+		Lista de Filmes
+	</h1>
+		
+		<table>
+			<thead>
+				<tr>
+					<th>Número</th>
+					<th>Título</th>
+					<th>Gênero</th>
+					<th>Ano</th>
+					<th></th>
+					</tr>
+			</thead>
+		<tbody>
+			{{#filmes}}
+			<tr>
+			<td>{{numero}}</td>
+			<td>{{titulo}}</td>
+			<td>{{genero}}</td>
+			<td>{{ano}}</td>
+			<td> <a href="/exclui/{{numero}}" onclick="return confirm('Deseja exluir este filme?');">Excluir</a>
+				 <a href="/ver">Ver</a>
+			{{/filmes}}
+			
+			</tr>
+		</table>
+		<a href="/novo"> Novo filme </a>
+
+</body>
+</html>
